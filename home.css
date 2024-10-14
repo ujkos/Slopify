@@ -1,0 +1,72 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'League Spartan';
+    background-color: white;
+    background-image: url(asets/bg2.);
+}
+.logo{
+    display: flex;
+    height: 10vh;
+    width: auto;
+    margin-top: 6vh;
+    margin-bottom: 10vh;
+    justify-content: center;
+}
+.contact-container{
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.contact-left{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.contact-left-title{
+    color: black;
+    padding: 10px 15px;
+    font-size: 4vh;
+    margin-bottom: -1.75vh;
+}
+.contact-inputs {
+    width: 38.75vh;
+    height: 8vh;
+    background: none;
+    border: none;
+    border-bottom: 2px solid black;
+    text-align: center;
+    font-size: 1.5vh;
+    font-weight: bold;
+    color: black;
+    outline: none;
+}
+
+.contact-inputs::placeholder{
+    color: black;
+}
+.contact-left button{
+    display: flex;
+    align-items: center;
+    padding: 1.75vh 17.5vh;
+    font-size: 1.75vh;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    border: none;
+    background: black;
+    cursor: pointer;
+    margin-top: -4px;
+    border: 2px solid rgb(0, 0, 0);
+
+}
+
+.contact-left button:hover{
+    background-color: rgb(29, 29, 29);
+    border: none;
+    border: 2px solid rgb(29, 29, 29);
+}

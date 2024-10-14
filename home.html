@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slopify</title>
+    <link rel="stylesheet" href="./home.css">
+</head>
+<body>
+    <div class="logo">
+        <img src="asets/logo.png" alt="">
+    </div>
+    <div class="contact-container">
+        <form id="rset" name="cform" class="contact-left">
+            <div class="contact-left-title">
+                <h2>JOIN WAITLIST</h2>
+                
+            </div>
+            <input type="email" name="Email" placeholder="Email" class="contact-inputs" required>
+            <hr>
+            <input type="text" name="Name" placeholder="Name" class="contact-inputs" required>
+            <hr>
+            <button type="submit">Join</button>
+        </form>
+</div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbzqyi4UDLgHGW1gJVxDkf0G4P9fwOjQHWLnfhbNeYY85nAwcaehfjvjQpoFjaewrUzz/exec'
+      const form = document.forms['cform']
+      
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+        swal("Thank you!", "Your message has been sent successfully!", "success");
+        $("#rset")[0].reset();
+      })
+      </script>
+<!-- <script>
+    const form = document.getElementById('email-form');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault(); // Prevents the default form submission
+
+      const data = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value
+      };
+
+      // Replace with your Web App URL
+      const webAppUrl = 'https://script.google.com/macros/s/AKfycbzTkyTznJYw7r9WW5WbilwdzgRncYUkl4ktRO5yLXjL4BJ6CHcyJX_psAF_OGwRnQep/exec';
+
+      fetch(webAppUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json', // Set the content type
+        },
+        body: JSON.stringify(data)
+      })
+      .then(response => response.text())
+      .then(result => {
+        alert('Submission Successful: ' + result);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('Submission Failed!');
+      });
+    });
+  </script> -->
+</html>
